@@ -6,22 +6,37 @@
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>First Name</mat-label>
-        <input matInput type="text" placeholder="John..." formControlName="firstName"/>
+        <input
+          matInput
+          type="text"
+          placeholder="John..."
+          formControlName="firstName"
+        />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Last Name</mat-label>
-        <input matInput type="text" placeholder="Doe..." formControlName="lastName"/>
+        <input
+          matInput
+          type="text"
+          placeholder="Doe..."
+          formControlName="lastName"
+        />
       </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Email..." formControlName="email"/>
+        <input
+          matInput
+          type="email"
+          placeholder="Email..."
+          formControlName="email"
+        />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Date of birth</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="dob"/>
+        <input matInput [matDatepicker]="picker" formControlName="dob" />
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle
           matIconSuffix
@@ -51,23 +66,44 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Company</mat-label>
-        <input matInput type="text" placeholder="Company name..." formControlName="company"/>
+        <input
+          matInput
+          type="text"
+          placeholder="Company name..."
+          formControlName="company"
+        />
       </mat-form-field>
     </div>
     <div class="row">
       <mat-form-field appearance="outline">
         <mat-label>Experience</mat-label>
-        <input matInput type="text" placeholder="Experience..." type="number" formControlName="experience"/>
+        <input
+          matInput
+          type="text"
+          placeholder="Experience..."
+          type="number"
+          formControlName="experience"
+        />
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Package</mat-label>
-        <input matInput type="text" placeholder="Package..." type="number" formControlName="package"/>
+        <input
+          matInput
+          type="text"
+          placeholder="Package..."
+          type="number"
+          formControlName="package"
+        />
         <mat-hint>In rupees</mat-hint>
       </mat-form-field>
     </div>
   </div>
   <div mat-dialog-actions class="action">
-    <button mat-raised-button>Cancel</button>
-    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button type="button" [mat-dialog-close]="false">
+      Cancel
+    </button>
+    <button mat-raised-button color="primary" type="submit">
+      {{ data ? "Update" : "Add" }}
+    </button>
   </div>
 </form>
